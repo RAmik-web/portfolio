@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ramik Photography</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; }
+    header { 
+      background: url('https://source.unsplash.com/1600x900/?camera') no-repeat center center/cover;
+      height: 100vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+    header h1 { font-size: 3rem; background: rgba(0,0,0,0.5); padding: 20px; border-radius: 10px; }
+
+    nav {
+      background: #222;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section { padding: 40px 20px; max-width: 1000px; margin: auto; }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .about, .contact {
+      text-align: center;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    form button {
+      padding: 10px 20px;
+      background: #222;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Ramik Shrestha's Photography</h1>
+  </header>
+
+  <nav>
+    <a href="#gallery"target="_blank">Gallery</a>
+    <a href="#about"target="_blank">About</a>
+    <a href="#contact"target="_blank">Contact</a>
+  </nav>
+
+  <section id="gallery">
+    <h2 style="text-align:center;">Gallery</h2>
+    <div class="gallery">
+      <img src="image/itachi.jpg" alt="Photo 1">
+      <img src="image/cousion.jpg.jpg" alt="Photo 2">
+      <img src="image/me.jpg.jpg" alt="Photo 3">
+      <img src="image/flower.jpg" alt="Photo 4">
+      <img src="image/culture.jpg.jpg" alt="Photo 5">
+      
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>Hi! I’m Ramik Shrestha, a passionate photographer capturing moments from daily life, nature, and people. Let’s create memories together!</p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <form onsubmit="handleSubmit(event)">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="5" placeholder="Your Message"></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+<footer style="background: #222; color: white; padding: 30px 20px; text-align: center;">
+  <div style="margin-bottom: 15px;">
+    <a href="https://www.facebook.com/ramika.srestha" target="_blank" style="margin: 0 10px; color: #ccc; text-decoration: none;">Facebook</a>
+    <a href="https://www.instagram.com/ramik.shrestha21" target="_blank" style="margin: 0 10px; color: #ccc; text-decoration: none;">Instagram</a>
+    <a href="https://www.linkedin.com/in/ramik-shrestha-b63b40309/" target="_blank" style="margin: 0 10px; color: #ccc; text-decoration: none;">LinkedIn</a>
+  </div>
+  <p>&copy; 2025 Ramik Shrestha Photography. All rights reserved.</p>
+</footer>
+
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      alert('Thanks for your message! I’ll get back to you soon.');
+    }
+  </script>
+</body>
+</html>

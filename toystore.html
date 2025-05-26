@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Toy Store Chatbot</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #fef6f2; padding: 20px; }
+    .chat-box { width: 100%; max-width: 500px; margin: auto; background: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); padding: 20px; }
+    .chat-log { max-height: 300px; overflow-y: auto; margin-bottom: 10px; }
+    .message { margin: 10px 0; }
+    .bot { color: #555; }
+    .user { text-align: right; color: #0b7dda; }
+    input[type="text"] { width: 80%; padding: 10px; }
+    button { padding: 10px 20px; background: #f78f20; color: white; border: none; border-radius: 5px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div class="chat-box">
+    <h2>JoyBringers Chatbot 🎁</h2>
+    <div class="chat-log" id="chatLog"></div>
+    <input type="text" id="userInput" placeholder="Ask me about toys..." />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+
+  <script>
+    const chatLog = document.getElementById("chatLog");
+
+    const toyBot = (msg) => {
+      msg = msg.toLowerCase();
+      if (msg.includes("hello") || msg.includes("hi")) {
+        return "Hi there! 👋 Looking for a gift or toy recommendation?";
+      } else if (msg.includes("recommend") || msg.includes("suggest")) {
+        return "Sure! We have cute plushies 🧸, educational toys 🧠, and fun games 🎲. What age group are you shopping for?";
+      } else if (msg.includes("1 year") || msg.includes("baby")) {
+        return "For babies, we recommend soft plushies and rattles. Want to see our bestsellers?";
+      } else if (msg.includes("price") || msg.includes("cost")) {
+        return "Our toys range from $5 to $50 depending on size and brand.";
+      } else if (msg.includes("bye")) {
+        return "Thanks for chatting! Have a fun-filled day! 🎈";
+      } else {
+        return "I'm here to help with toy recommendations, prices, and more. Ask me anything!";
+      }
+    };
+
+    function sendMessage() {
+      const userInput = document.getElementById("userInput");
+      const msg = userInput.value.trim();
+      if (!msg) return;
+
+      chatLog.innerHTML += `<div class="message user">${msg}</div>`;
+      const botReply = toyBot(msg);
+      setTimeout(() => {
+        chatLog.innerHTML += `<div class="message bot">${botReply}</div>`;
+        chatLog.scrollTop = chatLog.scrollHeight;
+      }, 500);
+
+      userInput.value = "";
+    }
+  </script>
+  <footer style="background: #222; color: white; padding: 0px 20px; text-align: left;"></footerstyle>
+    <p><a href="project.html"target="_blank">Back to Projects</a></p>
+    <p>&copy; 2025 Ramik Shrestha. All rights reserved.</p>
+  </footer>
+</body>
+</html>
